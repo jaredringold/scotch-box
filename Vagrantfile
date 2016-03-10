@@ -10,9 +10,9 @@ Vagrant.configure("2") do |config|
   config.vm.define "scotch-box" do |node|
     node.vm.box = "scotch/box"
     node.vm.hostname = "scotchbox"
-    node.vm.network :private_network, ip: "192.168.33.10"
+    node.vm.network "private_network", ip: "192.168.33.10"
     node.vm.synced_folder ".", "/var/www", :mount_options => ["dmode=777", "fmode=666"]
-    node.hostmanager.aliases = %w{www.scotchbox}
+    #node.hostmanager.aliases = %w{www.scotchbox}
   end
 
 end
